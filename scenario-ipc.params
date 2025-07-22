@@ -1,3 +1,6 @@
+CLI_PREFIX="CONFIG_"
+CLI_GLUE="="
+CLI_BOOLEAN="hide"
 TIPC_MEDIA_UDP {True, False}[False]
 TIPC_CRYPTO {True, False}[False]
 TIPC_MEDIA_IB {True, False}[False]
