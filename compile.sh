@@ -12,10 +12,20 @@ klocalizer			\
     --arch x86_64		\
     --match .config		\
     --show-unsat-core		\
-    $(paste -s -d ' ' ${tmp})	\
-|| exit 1
+    $(paste -s -d ' ' ${tmp})
+
+if [[ $? -ne 0 ]]; then
+    popd
+    exit 1
+fi
+
 rm ${tmp}
 make olddefconfig
 make -j$(nproc)
+
+if [[ $? -ne 0 ]]; then
+    popd
+    exit 1
+fi
 
 popd
