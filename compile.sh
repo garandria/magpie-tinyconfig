@@ -1,6 +1,6 @@
 #!/bin/bash
 
-pushd linux-6.6
+cd linux-6.6
 
 tmp=.tmp.args
 
@@ -15,7 +15,6 @@ klocalizer			\
     $(paste -s -d ' ' ${tmp})
 
 if [[ $? -ne 0 ]]; then
-    popd
     exit 1
 fi
 
@@ -24,8 +23,5 @@ make olddefconfig
 make -j$(nproc)
 
 if [[ $? -ne 0 ]]; then
-    popd
     exit 1
 fi
-
-popd
