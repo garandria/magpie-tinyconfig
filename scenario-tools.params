@@ -1,3 +1,0 @@
-CLI_PREFIX="CONFIG_"
-CLI_GLUE="="
-CLI_BOOLEAN="hide"
