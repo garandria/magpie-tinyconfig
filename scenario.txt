@@ -1,0 +1,19 @@
+[magpie]
+default_timeout = 3600
+default_lengthout = -1
+
+[software]
+path = ../magpie-tinyconfig
+target_files = scenario-certs.params
+fitness = output
+
+init_cmd = bash init.sh
+setup_cmd = bash setup.sh
+compile_cmd = bash compile.sh
+test_cmd =
+run_cmd = bash eval.sh
+
+[search]
+warmup = 1
+max_time = 3600
+possible_edits = ParamSetting
